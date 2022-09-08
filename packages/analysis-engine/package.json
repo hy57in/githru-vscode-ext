@@ -1,6 +1,6 @@
 {
-  "name": "analysis-engine",
-  "version": "0.0.1",
+  "name": "@githru-vscode-ext/analysis-engine",
+  "version": "0.1.0",
   "description": "analysis-engine module for githru",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "rollup -c && tsc -d --emitDeclarationOnly --noEmit false --declarationDir dist",
-    "start": "cd dist && node index.js",
+    "start": "sh -c 'node -e \"require(\\\"./dist/index.js\\\").getMockData(\\\"$0\\\")\"'",
     "lint": "eslint --ignore-path .gitignore --fix --max-warnings 0 \"**/*.{js,ts}\"",
     "check:eslint": "eslint --ignore-path .gitignore --max-warnings 0 \"**/*.{js,ts}\"",
     "check:vulnerabilities": "npm audit --omit=dev",
